@@ -6,7 +6,26 @@ using System.Threading.Tasks;
 
 namespace ExceptionHandling
 {
-    internal class YoutubeApi
-    {
+    public class YoutubeApi
+	{
+        public List<Video> GetVideos(string user)
+        {
+			try
+			{
+				//Access to Youtube web service
+				//Read the data
+				//Create a list of Video objectss
+
+			}
+			catch (Exception ex)
+			{
+
+				throw;
+			}
+
+			return new List<Video>();
+		}
+
+
     }
 }

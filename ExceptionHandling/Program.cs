@@ -9,20 +9,16 @@ namespace ExceptionHandling // Note: actual namespace depends on the project nam
 
             try
             {
-                var calculator = new Calculator();
-                var result = calculator.Divide(5, 0);
-
+                using (var streamReader = new StreamReader(@"c:\file.zip"))  //So, the Using statement is the preferred way as opposed to creating a finally block and calling the Dispose method.
+                {
+                    var content = streamReader.ReadToEnd();
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("You cannot divide by 0.");
+                Console.WriteLine("Sorry, an unexpected error occurred");
             }
-            finally
-            {
-                Console.WriteLine();
-            }
-
-
+            
 
         }
     }
@@ -56,5 +52,22 @@ Examples are file handles,
 database connections, network connections,
 
 graphic handles and in situations like that we need to manually do the cleanup.
+
+
+You have seen the try block,
+
+you have seen the catch block,
+
+you have seen multiple occurrences of the catch blocks from the most
+
+specific to most generic ones and you have also seen the finally block.
+
+But how can we create and throw custom exceptions?
+
+And in what scenarios do we need that?
+
+Take a look at this YouTube.Api class I have implemented here.
+
+
 
  */
